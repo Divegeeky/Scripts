@@ -22,8 +22,7 @@ function Get-JAVA {
         if (Test-Connection $Name -Quiet -Count 2){
             try {
                  $Fromunda = (Invoke-Command -ComputerName $Name -ScriptBlock {
-                 Test-Path -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Group Policy\AppMgmt\{276c0ace-9e6c-4522-9b94-bdcfc991b2f5}"
-                 Test-Path -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Group Policy\AppMgmt\{7748c09b-dea9-4736-a1ed-070cce7ae0d5}"
+                 (Get-ItemProperty 'HKLM:\SOFTWARE\Microsoft\Internet Explorer').Version
                  }) }
             catch{
                  } 

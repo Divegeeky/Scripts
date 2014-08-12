@@ -22,7 +22,7 @@ function Get-JAVA {
         if (Test-Connection $Name -Quiet -Count 2){
             try {
                  $Fromunda = (Invoke-Command -ComputerName $Name -ScriptBlock {
-                 $Test = Test-Path -Path "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Group Policy\AppMgmt\{a2e07cfd-04c4-4abd-8719-6c990572df01}"
+                 $Test = Test-Path -Path "C:\Program Files (x86)\Adobe\Acrobat 8.0\Acrobat\Acrobat.exe"
                  Return $Test}) }
             catch{
                  } 
@@ -68,6 +68,6 @@ function Remove-JAVA {
 
 #region main
 $IHAVEJAVA = $Computers | Get-Java 
-$IHAVEJAVA | Select Name | Remove-JAVA
+#$IHAVEJAVA | Select Name | Remove-JAVA
 
 #endregion main

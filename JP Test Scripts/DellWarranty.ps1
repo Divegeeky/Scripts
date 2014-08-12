@@ -149,3 +149,5 @@ function Get-DellWarranty{
     { 
     } 
 }
+$Computer = 'FSO0212'
+$Computer | Get-DellWarranty
