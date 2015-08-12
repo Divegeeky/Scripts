@@ -1,10 +1,10 @@
 ﻿#region include
-Import-module C:\Users\Jpototsk\scripts\include\Get_Functions.psm1
+Import-module \\FSO\CORE\Scripts\include\Get_Functions.psm1
 #endregion include
 
 #region variables
 $BiosData = @()
-$Computers = Get-Content C:\temp\BiosComputers.txt
+$Computers = Get-AllClients | Select Name
 #endregion variable
 
 #region functions
